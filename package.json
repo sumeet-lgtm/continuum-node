@@ -1,0 +1,28 @@
+{
+  "name": "@continuum/api",
+  "version": "0.1.0",
+  "description": "Official Node.js SDK for the Continuum email API",
+  "keywords": ["email", "verification", "sending", "continuum", "sdk"],
+  "homepage": "https://continuumapi.com/docs",
+  "repository": { "type": "git", "url": "https://github.com/sumeet-lgtm/continuum-node" },
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  },
+  "engines": { "node": ">=18.0.0" }
+}
