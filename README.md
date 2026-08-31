@@ -4,6 +4,13 @@ Official Node.js SDK for [Continuum](https://continuumapi.com) — email verific
 
 ## Installation
 
+> **Not yet installable by anyone outside this checkout.** This package has
+> never been published to npm, and this repo has no git remote configured
+> yet either — so neither `npm install @continuum/api` nor
+> `npm install github:<org>/continuum-node` will work today. Once this repo
+> is pushed to a real GitHub remote and/or published to npm, replace this
+> notice with the real install command.
+
 ```bash
 npm install @continuum/api
 ```
@@ -44,6 +51,23 @@ continuum.verify.createBulkJob(emails[], webhookUrl?)
 continuum.verify.getBulkJob(id)
 continuum.verify.listBulkJobs({ page?, limit? })
 continuum.verify.getBulkResults(id, { page?, limit?, status? })
+```
+
+### `monitor`
+
+Continuous deliverability monitoring — the platform's most-marketed
+differentiator (see continuumapi.com's homepage and comparison pages), so
+this resource exists specifically to make sure it's actually reachable from
+the SDK rather than requiring a raw HTTP call.
+
+```ts
+continuum.monitor.create({ email, intervalHours?, tags?, notifyOnAnyChange? })
+continuum.monitor.list({ page?, limit?, isActive?, isPaused?, tag?, email? })
+continuum.monitor.get(id)
+continuum.monitor.update(id, { intervalHours?, isActive?, tags?, notifyOnAnyChange? })
+continuum.monitor.delete(id)
+continuum.monitor.recheck(id)
+continuum.monitor.checks(id, { page?, limit?, statusChanged? })
 ```
 
 ### `send`

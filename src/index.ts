@@ -1,6 +1,7 @@
 import { HttpClient, ContinuumError } from './client.js';
 import type { ContinuumOptions } from './client.js';
 import { VerifyResource } from './resources/verify.js';
+import { MonitorResource } from './resources/monitor.js';
 import { SendResource } from './resources/send.js';
 import { MessagesResource } from './resources/messages.js';
 import { SuppressionsResource } from './resources/suppressions.js';
@@ -18,6 +19,7 @@ import { UsageResource } from './resources/usage.js';
 
 export class Continuum {
   readonly verify: VerifyResource;
+  readonly monitor: MonitorResource;
   readonly send: SendResource;
   readonly messages: MessagesResource;
   readonly suppressions: SuppressionsResource;
@@ -36,6 +38,7 @@ export class Continuum {
   constructor(opts: ContinuumOptions) {
     const http = new HttpClient(opts);
     this.verify = new VerifyResource(http);
+    this.monitor = new MonitorResource(http);
     this.send = new SendResource(http);
     this.messages = new MessagesResource(http);
     this.suppressions = new SuppressionsResource(http);
@@ -58,6 +61,10 @@ export type { ContinuumOptions };
 
 // Resource types
 export type { VerificationResult, BulkJobResult } from './resources/verify.js';
+export type {
+  Monitor, MonitorListResult, MonitorCheck, MonitorCheckListResult,
+  CreateMonitorParams, UpdateMonitorParams, ListMonitorsParams,
+} from './resources/monitor.js';
 export type { SendParams, SendResult, BatchResult, Attachment } from './resources/send.js';
 export type { Message, MessageEvent, MessageStats } from './resources/messages.js';
 export type { Suppression } from './resources/suppressions.js';
