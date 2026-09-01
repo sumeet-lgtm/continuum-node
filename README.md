@@ -4,15 +4,12 @@ Official Node.js SDK for [Continuum](https://continuumapi.com) — email verific
 
 ## Installation
 
-> **Not yet installable by anyone outside this checkout.** This package has
-> never been published to npm, and this repo has no git remote configured
-> yet either — so neither `npm install @continuum/api` nor
-> `npm install github:<org>/continuum-node` will work today. Once this repo
-> is pushed to a real GitHub remote and/or published to npm, replace this
-> notice with the real install command.
+> **Not yet on the npm registry.** `npm install @continuum/api` doesn't work
+> yet — that requires publishing under the `@continuum` npm org, which
+> hasn't happened. Until then, install straight from GitHub:
 
 ```bash
-npm install @continuum/api
+npm install github:sumeet-lgtm/continuum-node
 ```
 
 Requires Node.js 18+. Zero runtime dependencies.
