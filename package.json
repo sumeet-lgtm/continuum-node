@@ -1,5 +1,5 @@
 {
-  "name": "@continuumapinpm/sdk",
+  "name": "continuum-email",
   "version": "0.1.0",
   "description": "Official Node.js SDK for the Continuum email API",
   "keywords": ["email", "verification", "sending", "continuum", "sdk"],
